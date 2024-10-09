@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Shop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Conteneur principal représentant le téléphone -->
+    <div class="telephone">
+      <!-- Représentation du son (actuellement vide, pourrait contenir une icône ou un effet sonore) -->
+      <div class="sound"></div>
+      <!-- Écran du téléphone -->
+      <div class="screen">
+        <!-- Message texte avec une partie en gras -->
+        <p class="message"><span class="bold">UN P'TIT CAFÉ</span>MOMO ?</p>
+        <!-- Liste des types de cafés -->
+        <div class="coffee">
+          <ul class="list">
+            <!-- Élément de la liste pour le Doppio avec un tabindex pour l'accessibilité au clavier -->
+            <li tabindex="0" id="doppio">DOPPIO</li>
+            <!-- Description du café Doppio -->
+            <p class="description" id="doppio_desc">
+              Le doppio en espresso est un double shot, extrait en utilisant un
+              filtre à café double dans le porte-filtre.
+            </p>
+            <!-- Représentation visuelle de la tasse de Doppio -->
+            <div class="cup doppio">
+              <!-- contenu du café Doppio  -->
+              <div class="content">
+                <div class="coffee_layers_doppio"></div>
+              </div>
+              <!-- Conteneur pour la vapeur qui s'échappe du café -->
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+            <li tabindex="0" id="macchiatto">MACCHIATTO</li>
+            <p class="description" id="macchiatto_desc">
+              Le caffè macchiato, parfois appelé espresso macchiato, est une
+              boisson à base d'espresso avec une petite quantité de lait
+              ajoutée, généralement du lait mousseux de nos jours.
+            </p>
+            <div class="cup macchiato">
+              <div class="content">
+                <div class="coffee_layers_macchiato"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+            <li tabindex="0" id="cortado">CORTADO</li>
+            <p class="description" id="cortado_desc">
+              Un cortado (du verbe espagnol "cortar" - couper) est un espresso
+              coupé avec une petite quantité de lait chaud.
+            </p>
+            <div class="cup cortado">
+              <div class="content cortado">
+                <div class="coffee_layers_cortado"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <li tabindex="0" id="cappuccino">CAPPUCCINO</li>
+            <p class="description" id="cappuccino_desc">
+              Un cappuccino (inspiré des moines capucins) est une boisson
+              italienne à base de café, traditionnellement préparée avec de
+              l'espresso, du lait chaud et de la mousse de lait chauffée à la
+              vapeur.
+            </p>
+            <div class="cup cappuccino">
+              <div class="content cortado">
+                <div class="coffee_layers_cappuccino"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <li tabindex="0" id="americano">AMERICANO</li>
+            <p class="description" id="americano_desc">
+              Un caffè americano est un type de café préparé en ajoutant de
+              l'eau chaude à un espresso, lui conférant une force similaire mais
+              une saveur différente de celle d'un café filtre traditionnel.
+            </p>
+            <div class="cup americano">
+              <div class="content">
+                <div class="coffee_layers_americano"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <li tabindex="0" id="mocha">MOCHA</li>
+            <p class="description" id="mocha_desc">
+              Le caffè mocha est basé sur de l'espresso et du lait chaud, avec
+              l'ajout de chocolat, généralement sous forme de cacao en poudre
+              sucré, bien que de nombreuses variantes utilisent du sirop de
+              chocolat.
+            </p>
+            <div class="cup mocha">
+              <div class="content">
+                <div class="coffee_layers_mocha"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <li tabindex="0" id="latte">LATTE</li>
+            <p class="description" id="latte_desc">
+              Un caffè latte est une boisson à base de café préparée avec de
+              l'espresso et du lait chauffé à la vapeur. Le terme est italien et
+              signifie "café au lait."
+            </p>
+            <div class="cup latte">
+              <div class="content">
+                <div class="coffee_layers_latte"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <li tabindex="0" id="breve">BREVE</li>
+            <p class="description" id="breve_desc">
+              Un caffè breve est une variante américaine du latte : une boisson
+              à base d'espresso avec un mélange de moitié-moitié (lait et crème)
+              chauffé à la vapeur, au lieu du lait.
+            </p>
+            <div class="cup breve">
+              <div class="content">
+                <div class="coffee_layers_breve"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <li tabindex="0" id="mocha_breve">MOCHA BREVE</li>
+            <p class="description" id="mocha_breve_desc">
+              Un mocha breve est similaire à un caffè breve, avec l'ajout d'une
+              once de cacao en poudre ou de sirop de chocolat
+            </p>
+            <div class="cup mocha_breve">
+              <div class="content">
+                <div class="coffee_layers_mocha_breve"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <li tabindex="0" id="flat_white">FLAT WHITE</li>
+            <p class="description" id="flat_white_desc">
+              Un flat white est préparé en versant de la micro-mousse (lait
+              chauffé à la vapeur avec de petites bulles fines et une
+              consistance brillante ou veloutée) sur un simple ou double shot
+              d'espresso.
+            </p>
+            <div class="cup flat_white">
+              <div class="content">
+                <div class="coffee_layers_flat_white"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <li tabindex="0" id="cafe_bombon">CAFÉ BOMBÓN</li>
+            <p class="description" id="cafe_bombon_desc">
+              Un café bombón est une boisson caféinée populaire en Espagne,
+              préparée avec de l'espresso servi avec du lait concentré sucré
+              dans un ration de 1:1.
+            </p>
+            <div class="cup cafe_bombon">
+              <div class="content">
+                <div class="coffee_layers_cafe_bombon"></div>
+              </div>
+              <div class="smoke_container">
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 94 472"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M88.9246 457.439C49.2579 445.379 -7.077 383.657 43.1556 301.132C58.8433 275.359 62.6434 180.034 40.2502 150.982C17.857 121.93 15.7445 30.6912 15.7445 0.618896"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="100"
+                  viewBox="0 0 89 482"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M84.5147 467.439C44.848 455.379 -13.0586 403.13 37.9456 321.079C70.3271 268.987 70.3346 73.4624 11.3346 10.6189"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+                <svg
+                  class="smoke"
+                  width="20"
+                  height="80"
+                  viewBox="0 0 68 450"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.3343 435.439C-12.3324 423.379 94.0845 347.108 27.3343 287.903C-9.5242 255.211 52.4216 204.577 52.4216 123.444C52.4216 42.3113 52.4216 86.167 27.3343 5.03397"
+                    stroke="white"
+                    stroke-width="30"
+                  />
+                </svg>
+              </div>
+            </div>
+            <!-- bouton pour sélectionner led cafés -->
+            <button tabindex="0" id="select">JE SÉLECTIONNE CE CAFÉ</button>
+          </ul>
+        </div>
+      </div>
+      <!-- Bouton pour retourner à l'accueil -->
+      <div class="home-btn"></div>
+    </div>
+  </body>
+</html>

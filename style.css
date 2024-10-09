@@ -1,0 +1,920 @@
+/* Reset et base */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #525766;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Style principal pour le conteneur du téléphone */
+.telephone {
+  background-color: #dedfe8; /* Couleur de fond */
+  width: 300px; /* Largeur du téléphone */
+  height: 600px; /* Hauteur du téléphone */
+  border-radius: 30px; /* Bordures arrondies */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre */
+  position: relative; /* Position relative pour permettre un positionnement absolu des éléments internes */
+  border: 4px solid #fff; /* Bordure autour du téléphone */
+}
+
+/* Section représentant l'écran du téléphone */
+.screen {
+  position: absolute;
+  top: calc(calc(600px - 468px) / 2); /* Centre verticalement l'écran dans le téléphone */
+  left: calc(calc(300px - 288px) / 2); /* Centre horizontalement l'écran dans le téléphone */
+  background-color: #3a3c3e;
+  width: 280px;
+  height: 460px;
+  overflow: hidden;
+}
+
+.sound {
+  position: absolute;
+  width: 60px;
+  height: 7px;
+  background-color: #b5a2a2;
+  border-radius: 20px;
+  top: calc(calc(600px - 468px) / 4);
+  left: calc(calc(300px - 68px) / 2);
+}
+
+/* Bouton home en bas du téléphone */
+.home-btn {
+  position: absolute;
+  bottom: calc(calc(600px - 468px) / 10);
+  left: calc(calc(300px - 48px) / 2);
+  border: 4px solid #a2a8b5;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Style du message affiché sur l'écran */
+.message {
+  background-color: #ee5834;
+  width: auto;
+  text-align: center;
+  color: #fff;
+  margin: auto; /* Centre le message dans l'écran */
+  padding-block: 10px; /* Espacement vertical interne */
+  font-size: 17px; /* Taille de police du texte */
+  font-weight: 100; /* Poids du texte */
+  font-family: Arial, Helvetica, sans-serif; /* Police */
+}
+
+/* Style pour le texte en gras dans le message */
+.bold {
+  font-weight: 700;
+  color: #fff;
+}
+
+.list {
+  position: relative;
+  list-style: none;
+}
+
+/* Style des éléments de la liste de café */
+.list li {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  transition: all 0.5s ease;
+  outline: none;
+  margin-block: 12px;
+  font-family: sans-serif;
+}
+
+/* Bouton de sélection caché par défaut */
+#select {
+  opacity: 0; /* Transparence complète par défaut */
+  display: none; /* Caché par défaut */
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  text-wrap: nowrap; /* Texte non-enveloppé */
+  font-size: xx-small; /* Petite taille de police */
+  cursor: pointer; /* Curseur de type pointeur */
+  padding-block: 10px;
+  padding-inline: 20px;
+  position: absolute;
+  top: 365px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+}
+
+#select p {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* Afficher le bouton de sélection lorsqu'un élément a le focus */
+:focus-within #select {
+  display: block;
+  animation-name: selectAppear;
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+/* Style du bouton lorsqu'il est survolé */
+#select:hover {
+  background-color: #fff;
+  color: #3a3c3e;
+}
+
+/* Affiche la description lorsque le bouton a le focus */
+#select:focus ~ .list .description {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Cache le bouton après qu'il ait été cliqué */
+#select:focus {
+  display: none;
+}
+
+@keyframes selectAppear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+li:focus-within ~ #select {
+  display: block;
+  animation-name: selectAppear;
+  animation-duration: 0s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+
+.description {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 70px;
+  color: #fff;
+  text-align: center;
+  font-size: small;
+  padding-inline: 20px;
+  cursor: default;
+  font-style: italic;
+}
+
+.list li {
+  position: absolute;
+}
+
+/* name */
+#doppio {
+  top: 0;
+}
+
+#macchiatto {
+  top: 35px;
+}
+
+#cortado {
+  top: 70px;
+}
+
+#cappuccino {
+  top: 105px;
+}
+
+#americano {
+  top: 140px;
+}
+
+#mocha {
+  top: 175px;
+}
+
+#latte {
+  top: 210px;
+}
+
+#breve {
+  top: 245px;
+}
+
+#mocha_breve {
+  top: 280px;
+}
+
+#flat_white {
+  top: 315px;
+}
+
+#cafe_bombon {
+  top: 350px;
+}
+
+/* desc */
+#doppio_desc {
+  top: 70px;
+}
+
+#macchiatto_desc {
+  top: 105px;
+}
+
+#cortado_desc {
+  top: 140px;
+}
+
+#cappuccino_desc {
+  top: 175px;
+}
+
+#americano_desc {
+  top: 210px;
+}
+
+#mocha_desc {
+  top: 245px;
+}
+
+#latte_desc {
+  top: 280px;
+}
+
+#breve_desc {
+  top: 315px;
+}
+
+#mocha_breve_desc {
+  top: 350px;
+}
+
+#flat_white_desc {
+  top: 385px;
+}
+
+#cafe_bombon_desc {
+  top: 420px;
+}
+
+@keyframes appearFromBot {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    top: 70px;
+  }
+}
+
+@keyframes appearFromLeft {
+  from {
+    transform: translateX(-300px);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes desappearToRight {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(300px);
+  }
+}
+
+/* Styles pour masquer tous les éléments de la liste lorsqu'un élément est en focus */
+.list:focus-within li {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Styles pour l'élément actuellement en focus */
+.list:focus-within li:focus-within {
+  opacity: 1;
+  pointer-events: auto;
+  position: absolute;
+  top: 104px;
+  left: 0;
+  width: 100%;
+}
+
+/* Style pour ajouter un soulignement sous l'élément en focus */
+.list:focus-within li:focus-within::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 0px;
+  height: 2px;
+  background: #ee5834;
+  animation-name: underlineName;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+@keyframes underlineName {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 70px;
+  }
+}
+
+/* Animation pour faire apparaître les `li` */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.list li {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* Animation pour faire disparaître les `li` */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.list:focus-within li {
+  animation-name: fadeOut;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+/* coffe focus animation for name */
+@keyframes doppioAppear {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+/* Appliquer l'animation d'apparition lorsque 'Doppio' est en focus */
+#doppio:focus-within {
+  animation-name: doppioAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+/* Afficher la description du café 'Doppio' lorsque l'élément est en focus */
+#doppio:focus-within ~ #doppio_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes macchiattoAppear {
+  from {
+    top: 35px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#macchiatto:focus-within {
+  animation-name: macchiattoAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#macchiatto:focus-within ~ #macchiatto_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes cortadoAppear {
+  from {
+    top: 70px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#cortado:focus-within {
+  animation-name: cortadoAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#cortado:focus-within ~ #cortado_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes cappuccinoAppear {
+  from {
+    top: 105px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#cappuccino:focus-within {
+  animation-name: cappuccinoAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#cappuccino:focus-within ~ #cappuccino_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes americanoAppear {
+  from {
+    top: 140px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#americano:focus-within {
+  animation-name: americanoAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#americano:focus-within ~ #americano_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes mochaAppear {
+  from {
+    top: 175px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#mocha:focus-within {
+  animation-name: mochaAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#mocha:focus-within ~ #mocha_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes latteAppear {
+  from {
+    top: 210px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#latte:focus-within {
+  animation-name: latteAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#latte:focus-within ~ #latte_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes breveAppear {
+  from {
+    top: 245px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#breve:focus-within {
+  animation-name: breveAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#breve:focus-within ~ #breve_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes mocha_breveAppear {
+  from {
+    top: 280px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#mocha_breve:focus-within {
+  animation-name: mocha_breveAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#mocha_breve:focus-within ~ #mocha_breve_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes flat_whiteAppear {
+  from {
+    top: 310px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#flat_white:focus-within {
+  animation-name: flat_whiteAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#flat_white:focus-within ~ #flat_white_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes cafe_bombonAppear {
+  from {
+    top: 345px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+#cafe_bombon:focus-within {
+  animation-name: cafe_bombonAppear;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+#cafe_bombon:focus-within ~ #cafe_bombon_desc {
+  display: block;
+  animation-name: appearFromBot;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+/* smoke and cup */
+@keyframes cofeAppear {
+  from {
+    opacity: 0;
+    left: -100%;
+  }
+
+  to {
+    opacity: 1;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+@keyframes cofeDisappear {
+  from {
+    opacity: 1;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.smoke {
+  position: relative;
+  bottom: 45px;
+  filter: blur(6px);
+  opacity: 0.6;
+  animation: rise 4.2s infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+}
+
+.smoke_container {
+  position: absolute;
+  top: 10px;
+  z-index: -1;
+}
+
+.smoke:nth-child(1) {
+  animation-delay: 0.5s;
+  left: 66%;
+  bottom: 118px;
+}
+
+.smoke:nth-child(2) {
+  animation-delay: 0.7s;
+  left: 46.5%;
+  bottom: 115px;
+}
+
+.smoke:nth-child(3) {
+  animation-delay: 0.5s;
+  left: 58%;
+  bottom: 115px;
+}
+
+.cup {
+  display: none;
+  width: 160px;
+  height: 160px;
+  border: 8px solid white;
+  border-radius: 0 0 60px 60px;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  left: -100%;
+  top: 180px;
+  margin-bottom: 15rem;
+}
+
+li:focus-within ~ .cup {
+  display: block;
+  animation-name: cofeAppear;
+  animation-duration: 1.7s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.1s;
+}
+
+li:focus ~ .cup{
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+.cup .content {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  background: transparent;
+  border-radius: 25% 25% 34% 38% / 0% 0% 27% 26%;
+  overflow: hidden;
+}
+
+.cup .coffee_layers_doppio,
+.cup .coffee_layers_macchiato,
+.cup .coffee_layers_cortado,
+.cup .coffee_layers_cappuccino,
+.cup .coffee_layers_americano,
+.cup .coffee_layers_mocha,
+.cup .coffee_layers_latte,
+.cup .coffee_layers_breve,
+.cup .coffee_layers_mocha_breve,
+.cup .coffee_layers_flat_white,
+.cup .coffee_layers_cafe_bombon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -100%;
+  border-radius: inherit;
+  animation: fillCup 0.8s forwards ease-out 1s;
+  opacity: 0;
+}
+
+.cup .coffee_layers_doppio {
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    RGB(183, 112, 70) 60% 66%,
+    #4c2b14 66% 100%
+  );
+}
+
+.cup .coffee_layers_cortado {
+  background: linear-gradient(
+    to bottom,
+    transparent 48%,
+    RGB(251, 253, 255) 48% 65%,
+    RGB(181, 112, 75) 65% 70%,
+    #51251d 70% 100%
+  );
+}
+
+.cup .coffee_layers_macchiato {
+  background: linear-gradient(
+    to bottom,
+    transparent 55%,
+    RGB(251, 253, 255) 55% 65%,
+    RGB(181, 112, 75) 65% 70%,
+    #51251d 70% 100%
+  );
+}
+.cup .coffee_layers_cappuccino{
+    background: linear-gradient(to bottom, 
+    RGB(251, 253, 255) 33%,  
+    RGB(241, 234, 218) 33% 65%, 
+    RGB(181, 112, 75) 65% 70%, 
+    #51251D 70% 100% 
+  );
+}
+.cup .coffee_layers_americano{
+    background: linear-gradient(to bottom, 
+    transparent 15%,  
+    RGB(199, 219, 223) 15% 65%, 
+    RGB(181, 112, 75) 65% 70%, 
+    #51251D 70% 100% 
+  );
+}
+
+.cup .coffee_layers_mocha{
+    background: linear-gradient(to bottom, 
+    transparent 15%,  
+    RGB(241, 233, 220) 15% 30%, 
+    RGB(117, 73, 29) 30% 65%, 
+    RGB(182, 113, 77) 65% 70%,
+    #51251D 70% 100% 
+  );
+}
+
+.cup .coffee_layers_latte{
+    background: linear-gradient(to bottom, 
+    transparent 15%, 
+    RGB(254, 255, 255) 15% 17%, 
+    RGB(241, 233, 220) 17% 65%, 
+    RGB(182, 113, 77) 65% 70%,
+    #51251D 70% 100% 
+  );
+}
+
+.cup .coffee_layers_breve{
+    background: linear-gradient(to bottom, 
+    transparent 15%,  
+    RGB(239, 231, 220) 15% 65%, 
+    RGB(182, 113, 77) 65% 70%,
+    #51251D 70% 100% 
+  );
+}
+
+.cup .coffee_layers_mocha_breve{
+    background: linear-gradient(to bottom, 
+    RGB(239, 231, 220) 33%,  
+    #75491D 33% 66%, 
+    RGB(182, 113, 77) 66% 70%,
+    #51251D 70% 100% 
+  );
+}
+
+.cup .coffee_layers_flat_white{
+    background: linear-gradient(to bottom, 
+        RGB(239, 231, 220) 65%,   
+        RGB(182, 113, 77) 65% 70%,
+        #51251D 70% 100% 
+      );
+}
+
+.cup .coffee_layers_cafe_bombon{
+    background: linear-gradient(to bottom, 
+    transparent 33%,
+    RGB(177, 115, 75) 33% 40%,
+    #51251D 33% 70%,
+    RGB(239, 231, 220) 70% 100% 
+  );
+}
+
+
+.cup::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 100%;
+  width: 40px;
+  height: 60px;
+  border: 8px solid white;
+  border-radius: 0 40px 40px 0;
+  /* Handle shape */
+  background-color: transparent;
+}
+
+/* Keyframe for the content (coffee layers) filling from the bottom */
+@keyframes fillCup {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
